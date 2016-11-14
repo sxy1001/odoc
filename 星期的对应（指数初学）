@@ -1,0 +1,16 @@
+//星期的对应
+#include<stdio.h>
+int main()
+{
+	int j;
+	char *pstr[20]={
+		"Monday","Tuesday","Wendnesday","Thursday","Friday","Saturday","Sunday"
+	};
+	printf("please input a number between 1~7\n");
+	scanf("%d",&j);
+	if(j>=1&&j<=7)
+	printf("%s\n",*(pstr+j-1));
+	else
+	printf("input error");
+	return 0;
+} 
