@@ -1,0 +1,25 @@
+//汉若塔问题（递归函数） 
+#include<stdio.h>
+void move(char x,char y)
+{
+	printf("从%c塔移动到%c塔\n",x,y);
+}
+void hanroni(int x,char a,char b,char c)
+{
+	if(x==1)move(a,c);
+	else
+	{
+	hanroni(x-1,a,c,b);
+	move(a,c);
+	hanroni(x-1,b,c,a); 	
+	}	
+}
+int main()
+{
+	int n;
+	char a='a',b='b',c='c';
+	printf("输入多少个盘子:");
+	scanf("%d",&n);
+	hanroni(n,a,b,c);
+	return 0;
+}
