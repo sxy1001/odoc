@@ -1,4 +1,4 @@
-//汉若塔问题（递归函数） 
+用//汉若塔问题（递归函数） 
 #include<stdio.h>
 void move(char x,char y)
 {
@@ -23,3 +23,18 @@ int main()
 	hanroni(n,a,b,c);
 	return 0;
 }
+用python写的汉若塔
+def Move(x,y):
+    print("Move "+x+" to "+y)
+def hanroni(n,j,k,l):
+    if n == 1:
+        Move(j,l)
+    else:
+        hanroni(n-1,j,k,l)
+        Move(j,l)
+        hanroni(n-1,k,l,j)
+def main():       
+    plate = int(input("input the number of plates:"))
+    a,b,c = 'A','B','C'
+    hanroni(plate,a,b,c)
+main()    
