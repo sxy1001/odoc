@@ -1,0 +1,40 @@
+用//汉若塔问题（递归函数） 
+#include<stdio.h>
+void move(char x,char y)
+{
+	printf("从%c塔移动到%c塔\n",x,y);
+}
+void hanroni(int x,char a,char b,char c)
+{
+	if(x==1)move(a,c);
+	else
+	{
+	hanroni(x-1,a,c,b);
+	move(a,c);
+	hanroni(x-1,b,c,a); 	
+	}	
+}
+int main()
+{
+	int n;
+	char a='a',b='b',c='c';
+	printf("输入多少个盘子:");
+	scanf("%d",&n);
+	hanroni(n,a,b,c);
+	return 0;
+}
+用python写的汉若塔
+def Move(x,y):
+    print("Move "+x+" to "+y)
+def hanroni(n,j,k,l):
+    if n == 1:
+        Move(j,l)
+    else:
+        hanroni(n-1,j,k,l)
+        Move(j,l)
+        hanroni(n-1,k,l,j)
+def main():       
+    plate = int(input("input the number of plates:"))
+    a,b,c = 'A','B','C'
+    hanroni(plate,a,b,c)
+main()    
